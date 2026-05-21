@@ -21,7 +21,6 @@ export default function Header() {
           <a href="https://www.google.com/maps?q=R.+Celestino+Moreira,+82+-+Sítio+Morro+Grande,+São+Paulo+-+SP,+02808-010"
             target="_blank"
             rel="noreferrer">📍 Localização</a>
-          <a href="tel:1139738161">📞 (11) 3973-8161</a>
           <a href="https://wa.me/5511987644323" target="_blank" rel="noreferrer">💬 WhatsApp</a>
         </div>
 

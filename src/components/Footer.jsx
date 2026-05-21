@@ -11,7 +11,6 @@ export default function Footer() {
         <div className="footer__info">
           <p>📱 @rmaxx_oficina</p>
           <p><a href="tel:1198764323">📞 (11) 98764-4323</a></p>
-          <p><a href="tel:1139738161">📞 (11) 3973-8161</a></p>
           <p>📍 R. Celestina Moreira, 82 - Sítio Morro Grande, SP - 02808-010</p>
         </div>
       </div>

@@ -301,8 +301,8 @@ ul {
 
 .servicos__gear {
   position: absolute;
-  opacity: 0.1;
-  color: #777474;
+  opacity: 0.3;
+  color: #474343;
   z-index: 0;
 }
 

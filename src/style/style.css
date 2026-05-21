@@ -43,6 +43,9 @@ ul {
   background: var(--preto);
   z-index: 1000;
   padding: 0.8rem 3rem;
+  height: 100px;
+  display: flex;
+  justify-content: center;
 }
 
 .nav {
@@ -83,7 +86,7 @@ ul {
 
 .nav__contact a {
   color: var(--branco);
-  font-size: 1.5rem;
+  font-size: 2rem;
   display: flex;
   align-items: center;
   gap: 0.4rem;
@@ -154,7 +157,7 @@ ul {
 /* =================== VALORES =================== */
 .valores {
   width: 100%;
-  height: 80rem;
+  height: 50rem;
   padding: 5rem 4rem;
   background: var(--branco);
   display: flex;
@@ -226,7 +229,7 @@ ul {
 /* =================== QUEM SOMOS =================== */
 .quem-somos {
   width: 100%;
-  height: 80rem;
+  height: 50rem;
   padding: 6rem 3rem;
   background: var(--branco);
   display: flex;
@@ -278,7 +281,7 @@ ul {
 /* =================== SERVIÇOS =================== */
 .servicos {
   width: 100%;
-  height: 80rem;
+  height: 50rem;
   padding: 6rem 4rem;
   background: var(--branco);
   display: flex;
@@ -301,8 +304,8 @@ ul {
 
 .servicos__gear {
   position: absolute;
-  opacity: 0.1;
-  color: #777474;
+  opacity: 0.3;
+  color: #474343;
   z-index: 0;
 }
 
@@ -389,7 +392,7 @@ ul {
 /* =================== CARDS =================== */
 .cards {
   width: 100%;
-  height: 80rem;
+  height: 50rem;
   padding: 5rem 4rem;
   background: var(--branco);
   display: flex;
@@ -482,16 +485,16 @@ ul {
 /* =================== FAQ =================== */
 .faq {
   width: 100%;
-  padding: 5rem 3rem;
+  padding: 5rem 4rem;
   background: var(--cinza-claro);
 }
 
 .faq h2 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 700;
   margin-bottom: 2.5rem;
   text-align: center;
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: var(--fonte-titulo);
 }
 
 .faq__list {
@@ -520,6 +523,21 @@ ul {
   font-family: var(--fonte);
   gap: 1rem;
   color: var(--preto);
+}
+
+.faq__icon {
+  transition: transform 0.3s ease;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+.faq__icon--open {
+  transform: rotate(180deg);
+}
+
+.faq__resposta-wrapper {
+  overflow: hidden;
+  transition: max-height 0.4s ease;
 }
 
 .faq__resposta {

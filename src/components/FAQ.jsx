@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 const perguntas = [
   {
@@ -27,6 +27,28 @@ const perguntas = [
   },
 ];
 
+function FAQItem({ item, isOpen, onToggle }) {
+  const contentRef = useRef(null);
+
+  return (
+    <li className="faq__item">
+      <button className="faq__pergunta" onClick={onToggle}>
+        {item.pergunta}
+        <span className={`faq__icon ${isOpen ? 'faq__icon--open' : ''}`}>▼</span>
+      </button>
+      <div
+        className="faq__resposta-wrapper"
+        style={{
+          maxHeight: isOpen ? contentRef.current?.scrollHeight + 'px' : '0px',
+        }}
+        ref={contentRef}
+      >
+        <p className="faq__resposta">{item.resposta}</p>
+      </div>
+    </li>
+  );
+}
+
 export default function FAQ() {
   const [aberto, setAberto] = useState(null);
 
@@ -38,15 +60,12 @@ export default function FAQ() {
         <h2>Perguntas Frequentes:</h2>
         <ul className="faq__list">
           {perguntas.map((item, index) => (
-            <li key={index} className={`faq__item ${aberto === index ? 'faq__item--open' : ''}`}>
-              <button className="faq__pergunta" onClick={() => toggle(index)}>
-                {item.pergunta}
-                <span>{aberto === index ? '▲' : '▼'}</span>
-              </button>
-              {aberto === index && (
-                <p className="faq__resposta">{item.resposta}</p>
-              )}
-            </li>
+            <FAQItem
+              key={index}
+              item={item}
+              isOpen={aberto === index}
+              onToggle={() => toggle(index)}
+            />
           ))}
         </ul>
       </div>

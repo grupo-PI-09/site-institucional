@@ -13,8 +13,8 @@ export default function Header() {
 
         <ul className={`nav__links ${menuOpen ? 'nav__links--open' : ''}`}>
           <li><a href="#">Home</a></li>
-          <li><a href="#servicos">Serviços</a></li>
           <li><a href="#quem-somos">Quem Somos</a></li>
+          <li><a href="#servicos">Serviços</a></li>
         </ul>
 
         <div className="nav__contact">

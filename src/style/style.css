@@ -1,0 +1,630 @@
+/* =================== RESET & VARIÁVEIS =================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --preto: #111111;
+  --vermelho: #CC0000;
+  --branco: #FFFFFF;
+  --cinza-claro: #F0F0F0;
+  --fonte: 'Teko', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fonte);
+  color: var(--preto);
+  background: var(--branco);
+  width: 100%;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* =================== HEADER =================== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--preto);
+  z-index: 1000;
+  padding: 0.8rem 3rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 2rem;
+}
+
+.nav__logo img {
+  height: 48px;
+}
+
+.nav__links {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.nav__links a {
+  color: var(--branco);
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+}
+
+.nav__links a:hover {
+  color: var(--vermelho);
+}
+
+.nav__contact {
+  display: flex;
+  gap: 1.5rem;
+  margin-left: auto;
+}
+
+.nav__contact a {
+  color: var(--branco);
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.nav__contact a:hover {
+  color: var(--vermelho);
+}
+
+.nav__hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--branco);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* =================== HERO =================== */
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 8rem 5rem 4rem;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 80rem;
+}
+
+.hero__content h1 {
+  font-size: 4.5rem;
+  color: var(--branco);
+  line-height: 1.15;
+  font-weight: 400;
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+.hero__content h1 strong {
+  color: var(--branco);
+  font-weight: 750;
+}
+
+.hero__content p {
+  color: var(--branco);
+  font-size: 3rem;
+  margin-top: 1.2rem;
+  opacity: 0.85;
+  font-style: italic;
+}
+
+/* =================== VALORES =================== */
+.valores {
+  width: 100%;
+  height: 80rem;
+  padding: 5rem 4rem;
+  background: var(--branco);
+  display: flex;
+  align-items: center;
+}
+
+.valores__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.valor-card {
+  background: var(--preto);
+  color: var(--branco);
+  padding: 3rem 2.5rem;
+  border-radius: 12px;
+  height: 35rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.valor-card h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--branco);
+  font-family: var(--fonte-titulo);
+  letter-spacing: 0.03em;
+  position: relative;
+  z-index: 1;
+}
+
+.valor-card p {
+  font-size: 1.8rem;
+  line-height: 1.9;
+  opacity: 0.9;
+  position: relative;
+  z-index: 1;
+  flex: 1;
+}
+
+.valor-card__gear1 {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  width: 260px;
+  height: 260px;
+  opacity: 0.12;
+  color: var(--branco);
+  stroke: var(--branco);
+}
+
+.valor-card__gear2 {
+  position: absolute;
+  bottom: 120px;
+  left: 160px;
+  width: 170px;
+  height: 170px;
+  opacity: 0.12;
+  color: var(--branco);
+  stroke: var(--branco);
+}
+
+/* =================== QUEM SOMOS =================== */
+.quem-somos {
+  width: 100%;
+  height: 80rem;
+  padding: 6rem 3rem;
+  background: var(--branco);
+  display: flex;
+  justify-content: center;
+}
+
+.quem-somos__inner {
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+  max-width: 2000px;
+  margin: 0 auto;
+}
+
+.quem-somos__img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.quem-somos__img img {
+  width: 100%;
+  max-width: 980px;
+  position: relative;
+  z-index: 1;
+}
+
+.quem-somos__text {
+  flex: 1;
+}
+
+.quem-somos__text h2 {
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.quem-somos__text p {
+  font-size: 2.5rem;
+  line-height: 1.9;
+  color: #444;
+  text-align: justify;
+}
+
+/* =================== SERVIÇOS =================== */
+.servicos {
+  width: 100%;
+  height: 80rem;
+  padding: 6rem 4rem;
+  background: var(--branco);
+  display: flex;
+  justify-content: center;
+}
+
+.servicos__inner {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  max-width: 2500rem;
+  margin: 0 auto;
+  justify-content: space-evenly;
+}
+
+.servicos__text {
+  flex: 1;
+  position: relative;
+}
+
+.servicos__gear {
+  position: absolute;
+  opacity: 0.1;
+  color: #777474;
+  z-index: 0;
+}
+
+.servicos__gear--big {
+  width: 600px;
+  height: 600px;
+  bottom: -180px;
+  left: -60px;
+}
+
+.servicos__gear--small {
+  width: 380px;
+  height: 380px;
+  bottom: 80px;
+  left: 380px;
+}
+
+.servicos__text h2 {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-bottom: 2.5rem;
+  color: var(--preto);
+  position: relative;
+  z-index: 1;
+}
+
+.servicos__text h2 strong {
+  color: var(--preto);
+  font-weight: 900;
+}
+
+.servicos__text .btn {
+  position: relative;
+  z-index: 1;
+  font-size: 2rem;
+}
+
+.servicos__list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.servicos__list li {
+  background: var(--preto);
+  color: var(--branco);
+  padding: 1.2rem 2rem;
+  border-radius: 6px;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* =================== BOTÕES =================== */
+.btn {
+  display: inline-block;
+  padding: 1rem 2.2rem;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  border: none;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.btn--primary {
+  background: var(--preto);
+  color: var(--branco);
+}
+
+.btn--white {
+  background: var(--branco);
+  color: var(--preto);
+}
+
+/* =================== CARDS =================== */
+.cards {
+  width: 100%;
+  height: 80rem;
+  padding: 5rem 4rem;
+  background: var(--branco);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cards__track {
+  display: flex;
+  gap: 1.5rem;
+  max-width: 140rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  flex: 1;
+  width: 20rem;
+  height: 40rem;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  transition: flex 0.4s ease, transform 0.4s ease;
+  cursor: pointer;
+}
+
+.card__descricao {
+  color: var(--branco);
+  font-size: 2.8rem;
+  line-height: 1.6;
+  text-align: center;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+.card:hover .card__descricao {
+  max-height: 200px;
+  opacity: 1;
+}
+
+.cards__track:hover .card {
+  flex: 0.6;
+}
+
+.cards__track .card:hover {
+  flex: 2;
+  transform: scale(1.02);
+}
+
+.card__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.card__overlay h3 {
+  color: var(--branco);
+  font-size: 3.5rem;
+  font-weight: 700;
+  font-family: var(--fonte-titulo);
+}
+
+.btn--dark {
+  background: var(--preto);
+  color: var(--branco);
+  padding: 0.8rem 2rem;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  transition: opacity 0.2s;
+}
+
+.btn--dark:hover {
+  opacity: 0.8;
+}
+
+/* =================== FAQ =================== */
+.faq {
+  width: 100%;
+  padding: 5rem 3rem;
+  background: var(--cinza-claro);
+}
+
+.faq h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+.faq__list {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.faq__item {
+  border-bottom: 1px solid #ccc;
+}
+
+.faq__pergunta {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 1.3rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--fonte);
+  gap: 1rem;
+  color: var(--preto);
+}
+
+.faq__resposta {
+  padding: 0 0 1.3rem;
+  font-size: 1.5rem;
+  line-height: 1.7;
+  color: #555;
+}
+
+/* =================== FOOTER =================== */
+.footer {
+  width: 100%;
+  background: var(--preto);
+  color: var(--branco);
+  padding: 3rem 3rem;
+}
+
+.footer__inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.footer__logo img {
+  height: 60px;
+}
+
+.footer__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  font-size: 1.5rem;
+}
+
+.footer__info a {
+  color: var(--branco);
+  transition: color 0.2s;
+}
+
+.footer__info a:hover {
+  color: var(--vermelho);
+}
+
+/* =================== RESPONSIVO =================== */
+@media (max-width: 1024px) {
+  .valores__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nav__contact {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav__links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    background: var(--preto);
+    padding: 1rem 2rem;
+    gap: 1rem;
+  }
+
+  .nav__links--open {
+    display: flex;
+  }
+
+  .nav__hamburger {
+    display: block;
+  }
+
+  .hero {
+    padding: 6rem 2rem 4rem;
+  }
+
+  .hero__content h1 {
+    font-size: 2.2rem;
+  }
+
+  .quem-somos__inner,
+  .servicos__inner {
+    flex-direction: column;
+  }
+
+  .valores__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cards__track {
+    flex-direction: column;
+  }
+
+  .card {
+    height: 280px;
+  }
+
+  .footer__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}

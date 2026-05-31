@@ -9,7 +9,7 @@ export default function Footer() {
           <img src={logo} alt="RR Maxx" />
         </div>
         <div className="footer__info">
-          <p>📱 @rrmaxx_oficina</p>
+          <a href="https://www.instagram.com/rrmaxx_oficina" target="_blank" rel="noreferrer">📱 @rrmaxx_oficina</a>
           <p><a href="tel:1198764323">📞 (11) 98764-4323</a></p>
           <p>📍 R. Celestina Moreira, 82 - Sítio Morro Grande, SP - 02808-010</p>
         </div>
